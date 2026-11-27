@@ -95,11 +95,19 @@ if st.session_state.respuesta is not None:
             st.rerun()
 
     else:
+        # Guardar el resultado una sola vez
+        if "partida_guardada" not in st.session_state:
+            st.session_state.partida_guardada = False
+
+        if not st.session_state.partida_guardada:
+            st.session_state.partidas.append(st.session_state.puntaje)
+            st.session_state.partida_guardada = True
+
         st.success(f"¡Partida terminada! Puntaje: {st.session_state.puntaje}/5")
 
-        if st.button("Guardar resultado y jugar de nuevo"):
-            st.session_state.partidas.append(st.session_state.puntaje)
+        if st.button("Jugar de nuevo"):
             st.session_state.puntaje = 0
             st.session_state.pregunta = 1
+            st.session_state.partida_guardada = False
             nueva_pregunta()
             st.rerun()
