@@ -3,6 +3,8 @@ import random
 import pandas as pd
 import streamlit as st
 
+st.set_page_config(layout="wide")
+
 st.title("🌱 ¿Qué cultivo produce más?")
 st.write("Pon a prueba tus conocimientos sobre la producción agrícola en Colombia.")
 

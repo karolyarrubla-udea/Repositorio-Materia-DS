@@ -2,7 +2,9 @@
 import streamlit as st
 import pandas as pd
 
-st.title("📊 Mis datos")
+st.set_page_config(layout="wide")
+
+st.title("Mis datos")
 
 st.write(
     "Consulta tus resultados y estadísticas "
