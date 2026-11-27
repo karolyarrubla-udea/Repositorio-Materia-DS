@@ -2,6 +2,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+from src.data import cargar_datos
 
 st.set_page_config(layout="wide")
 
@@ -9,7 +10,7 @@ st.title("🌱 Explorador Agrícola")
 st.caption("Consulta y compara la producción agrícola de Colombia. Fuente: Agronet.")
 
 # Cargar datos
-df = pd.read_csv("data/datos.csv")
+df = cargar_datos()
 
 # Filtros
 with st.container(border=True):

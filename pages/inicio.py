@@ -1,6 +1,7 @@
 
 import streamlit as st
 import pandas as pd
+from src.data import cargar_datos
 
 st.set_page_config(layout="wide")
 
@@ -12,7 +13,7 @@ st.write(
 )
 
 # Cargar datos
-df = pd.read_csv("data/datos.csv")
+df = cargar_datos()
 
 # Presentación
 st.subheader("¿Qué es V.P. Agrícola?")
