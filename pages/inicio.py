@@ -5,6 +5,8 @@ from src.data import cargar_datos
 
 st.set_page_config(layout="wide")
 
+st.image("assets/logo.jpg", width=180)
+
 st.title("🌱 Visualizador de Productividad Agrícola")
 
 st.write(

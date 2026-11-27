@@ -1,13 +1,22 @@
+
 import streamlit as st
 
 st.set_page_config(
     page_title="V.P. Agrícola",
     page_icon="🌱",
-    layout="wide",
-    initial_sidebar_state="expanded"
+    layout="wide"
 )
 
-st.title("Visualizador de Productividad Agrícola")
-st.write("Proyecto de Algortimia y Programación - Universidad de Antioquia")
+paginas = [
+    st.Page("pages/inicio.py", title="Inicio", default=True),
+    st.Page("pages/explorar.py", title="Explorar"),
+    st.Page("pages/jugar.py", title="Jugar"),
+    st.Page("pages/mis_datos.py", title="Mis datos")
+]
 
-st.success("¡Nuestra primera aplicación está funcionando!")
+pagina = st.navigation(paginas)
+
+with st.sidebar:
+    st.image("assets/logo.jpg", width=150)
+
+pagina.run()
